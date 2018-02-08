@@ -15,6 +15,7 @@ int waysToGiveACheck(char board[8][9]) {
        // printf("%c : %d\n",board[1][c],c);
         if(board[1][c]=='P' && c<=8 && c>0){
             l=c;
+            board[1][c]='#';
         }
         c++;
     }
