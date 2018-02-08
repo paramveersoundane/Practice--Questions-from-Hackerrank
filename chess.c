@@ -15,10 +15,11 @@ int waysToGiveACheck(char board[8][9]) {
        // printf("%c : %d\n",board[1][c],c);
         if(board[1][c]=='P' && c<=8 && c>0){
             l=c;
-            board[1][c]='#';
+           
         }
         c++;
     }
+    board[1][l]='#';
    // printf("%c",board[1][8]);
     //Knight promotion
     i=0;
@@ -101,14 +102,14 @@ int waysToGiveACheck(char board[8][9]) {
         while(i!=m || j!=n){
             if(m==i && j<n){
                 // printf("i is %d , j is %d & m is %d , n is %d \n",i,j,m,n);
-                if(board[i][j] != '#'&& board[i][j] != 'P' && board[i][j] != 'K' && board[i][j] != 'k' && i<=7 && i>=0 && j<=8 && j>0){
+                if(board[i][j] != '#' && board[i][j] != 'K' && board[i][j] != 'k' && i<=7 && i>=0 && j<=8 && j>0){
                 // printf("Here in return \n");
                  return 0;
                 }j++;
              }
             else if(m==i && j>n){
                 //  printf("i is %d , j is %d & m is %d , n is %d \n",i,j,m,n);
-                 if(board[i][j] != '#'&& board[i][j] != 'P' &&board[i][j] != 'K' && board[i][j] != 'k' && i<=7 && i>=0 && j<=8 && j>0){
+                 if(board[i][j] != '#' &&board[i][j] != 'K' && board[i][j] != 'k' && i<=7 && i>=0 && j<=8 && j>0){
                  return 0;
                  }j--;
 
@@ -117,7 +118,7 @@ int waysToGiveACheck(char board[8][9]) {
 
            else if(n==j){
              //  printf("i is %d , j is %d & m is %d , n is %d \n",i,j,m,n);
-              if(board[i][j] != '#' && board[i][j] != 'P' && board[i][j] != 'k' && i<=7 && i>=0 && j<=8 && j>0){
+              if(board[i][j] != '#'  && board[i][j] != 'k' && i<=7 && i>=0 && j<=8 && j>0){
                return 0;
               } i++;
            }
